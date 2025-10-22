@@ -1,0 +1,19 @@
+public static String isBalanced(String s) {
+    // Write your code here
+    
+    if(s.equals("")  || s.equals(" ")) { return "NO";}
+    while(true){ 
+        int orginalLen = s.length();
+        
+        s = s.replace("[]" , "");
+        s = s.replace("{}" , "");
+        s = s.replace("()" , "");
+        
+        int newLength = s.length();
+        
+        if( newLength == 0 ){
+            return "YES";
+            }
+        if(newLength == orginalLen ){return "NO";}
+    }
+    }   
