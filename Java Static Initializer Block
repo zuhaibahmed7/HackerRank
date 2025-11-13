@@ -1,0 +1,32 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+    static int H, B;
+    
+     Solution(int h, int b){
+        this.H= h;
+        this.B =b;
+        
+    }
+    static void checkPrint(){ 
+        
+    if(H <= 0 || B <= 0 ){
+            System.out.println("java.lang.Exception: Breadth and height must be positive"); 
+        }
+        else if(H > 0 && B > 0) {
+            System.out.println(B*H);
+        }
+    }
+    
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    Scanner sc = new Scanner(System.in);
+    int h = sc.nextInt();
+    int b = sc.nextInt();
+    Solution s = new Solution(h,b);
+    checkPrint();
+    
+    }
+}
