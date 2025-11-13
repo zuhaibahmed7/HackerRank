@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("================================");
+        for (int i = 0; i < 3; i++) {
+            String s = sc.next();
+            int x = sc.nextInt();
+
+            // Convert number to 3 digits manually
+            String num;
+            if (x < 10)
+                num = "00" + x;
+            else if (x < 100)
+                num = "0" + x;
+            else
+                num = String.valueOf(x);
+
+            // Add spaces after the string to make it 15 characters
+            StringBuilder line = new StringBuilder(s);
+            while (line.length() < 15) {
+                line.append(" ");
+            }
+
+            System.out.println(line.toString() + num);
+        }
+        System.out.println("================================");
+
+        sc.close();
+    }
+}
