@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        String s = sc.next();
+        
+        if(a.length()!=s.length()){
+            System.out.println("Not Anagrams");
+            return ;
+        }
+        a = a.toLowerCase();
+        s = s.toLowerCase();
+
+    
+    HashMap<Character, Integer> map = new HashMap<>();
+    HashMap<Character, Integer> map1 = new HashMap<>();
+
+    for(int i =0; i<a.length();++i){ 
+map.put(a.charAt(i), map.getOrDefault(a.charAt(i), 0) + 1);
+        }
+    for(int i = 0; i<s.length();++i){
+map1.put(s.charAt(i), map1.getOrDefault(s.charAt(i), 0) + 1);
+    }
+    if(map.equals(map1)){
+        System.out.println("Anagrams");
+    }
+    else{
+        System.out.println("Not Anagrams");
+    }
+    
+    
+    
+    }
+}
