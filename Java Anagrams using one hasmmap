@@ -1,0 +1,27 @@
+import java.util.HashMap;
+
+String a = "listen";
+String b = "silent";
+
+a = a.toLowerCase();
+b = b.toLowerCase();
+
+if(a.length() != b.length()) {
+    System.out.println("Not Anagrams");
+} else {
+    HashMap<Character, Integer> map = new HashMap<>();
+    for(char ch : a.toCharArray()) {
+        map.put(ch, map.getOrDefault(ch, 0) + 1);
+    }
+
+    for(char ch : b.toCharArray()) {
+        if(!map.containsKey(ch)) {
+            System.out.println("Not Anagrams");
+            return;
+        }
+        map.put(ch, map.get(ch) - 1);
+        if(map.get(ch) == 0) map.remove(ch);
+    }
+
+    System.out.println(map.isEmpty() ? "Anagrams" : "Not Anagrams");
+}
