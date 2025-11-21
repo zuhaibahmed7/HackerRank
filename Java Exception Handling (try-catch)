@@ -1,0 +1,27 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+    Scanner sc = new Scanner(System.in);
+    
+    
+    
+    // in try catch block, we must take the input inside the try block, in this try block input nature is deternmined that input is valid or not if we take the input outside the try, progrma ill crash before reaching to the try block 
+    try {
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        int val = x/y;
+            System.out.println(val);
+        }
+    
+    catch (InputMismatchException ime) {
+        System.out.println("java.util.InputMismatchException");
+        }
+    catch(ArithmeticException ex){
+        System.out.println("java.lang.ArithmeticException: / by zero");
+        }
+    }
+}
