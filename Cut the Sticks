@@ -1,0 +1,68 @@
+import java.io.*;
+import java.util.*;
+
+class Result {
+
+    /*
+     * Complete the 'cutTheSticks' function below.
+     *
+     * The function is expected to return an INTEGER_ARRAY.
+     * The function accepts INTEGER_ARRAY arr as parameter.
+     */
+
+    public static List<Integer> cutTheSticks(List<Integer> arr) {
+        List<Integer> result = new ArrayList<>();
+
+        while (!arr.isEmpty()) {
+            // record number of sticks before cutting
+            result.add(arr.size());
+
+            // find the minimum stick length
+            int min = Collections.min(arr);
+
+            // remove all sticks having the minimum length
+            Iterator<Integer> it = arr.iterator();
+            while(it.hasNext()){
+                int x = it.next();
+                if(x==min){
+                    it.remove();
+                }
+            }
+        }
+
+        return result;
+    }
+}
+
+public class Solution {
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
+
+        int n = Integer.parseInt(bufferedReader.readLine().trim());
+
+        String[] arrTemp = bufferedReader.readLine().replaceAll("\\s+$", "").split(" ");
+
+        List<Integer> arr = new ArrayList<>();
+
+        for (int i = 0; i < n; i++) {
+            int arrItem = Integer.parseInt(arrTemp[i]);
+            arr.add(arrItem);
+        }
+
+        List<Integer> result = Result.cutTheSticks(arr);
+
+        for (int i = 0; i < result.size(); i++) {
+            bufferedWriter.write(String.valueOf(result.get(i)));
+
+            if (i != result.size() - 1) {
+                bufferedWriter.write("\n");
+            }
+        }
+
+        bufferedWriter.newLine();
+
+        bufferedReader.close();
+        bufferedWriter.close();
+    }
+}
