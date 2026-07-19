@@ -1,0 +1,23 @@
+from collections import deque
+
+t = int(input())
+
+for _ in range(t):
+    input()          # number of cubes (not needed)
+    d = deque(map(int, input().split()))
+
+    last = float('inf')
+
+    while d:
+        if d[0] >= d[-1]:
+            cube = d.popleft()
+        else:
+            cube = d.pop()
+
+        if cube <= last:
+            last = cube
+        else:
+            print("No")
+            break
+    else:
+        print("Yes")
