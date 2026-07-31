@@ -1,0 +1,19 @@
+// Online Java Compiler
+// Use this editor to write, compile and run your Java code online
+class Main {
+    public static int findDuplicate(int [] nums){
+            int freq [] = new int[nums.length];
+            for(int num: nums){
+                freq[num]++;
+                if(freq[num]>1){
+                    return num;
+                }
+            }
+            return -1;
+        }
+  
+    public static void main(String[] args){
+       int [] nums = {1,3,4,2,2};
+        System.out.println(findDuplicate(nums));
+    }
+}
