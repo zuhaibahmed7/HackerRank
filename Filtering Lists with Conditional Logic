@@ -1,0 +1,8 @@
+def  Filtering_Lists(lst):
+    for i in lst:
+        if(i%5 == 0):
+            print(i , end = " ")
+        
+
+num_list = [10, 20, 33, 46, 55]
+Filtering_Lists(num_list)
