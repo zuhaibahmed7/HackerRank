@@ -1,0 +1,8 @@
+def Nested_Loops_for_Pattern(N):
+    for i in range(1, N+1):
+        for _ in range(i):
+            print(i, end = " ")
+        print()
+
+
+Nested_Loops_for_Pattern(5)
