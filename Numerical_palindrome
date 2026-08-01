@@ -1,0 +1,11 @@
+def numerical_palindrome(N):
+    str_number = str(N)
+    index = -1
+    reversed_number = ""
+    for _ in str_number:
+        reversed_number += str_number[index] 
+        index =index - 1
+    if str_number == reversed_number:
+        return True
+    else:
+        return False
