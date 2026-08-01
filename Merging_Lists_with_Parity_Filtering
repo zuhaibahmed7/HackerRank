@@ -1,0 +1,9 @@
+def Merging_Lists_with_Parity_Filtering(lst1, lst2):
+    new_lst = []
+    for value in lst1:
+        if value % 2 != 0:
+            new_lst.append(value)
+    for value in lst2:
+        if value % 2 == 0:
+            new_lst.append(value)
+    return new_lst
