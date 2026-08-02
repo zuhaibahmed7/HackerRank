@@ -1,0 +1,7 @@
+def Nested_Loops_for_Multiplication_Tables(start, end):
+    for i in range(start, end+1):
+        for j in range(start, end+1):
+            print(i*j, end = " ")
+        print()
+    
+Nested_Loops_for_Multiplication_Tables(1, 10)
